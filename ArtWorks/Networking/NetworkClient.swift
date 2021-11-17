@@ -34,5 +34,4 @@ class NetworkClient {
         }
         return responseSubject
     }
-    
 }
