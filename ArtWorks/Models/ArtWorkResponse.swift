@@ -7,10 +7,10 @@
 
 import Foundation
 
-// MARK: - ArtWorkList
-struct ArtWorkList: Codable {
+// MARK: - ArtWorkResponse
+struct ArtWorkResponse: Codable {
     let pagination: Pagination?
-    let artWorkData: [ArtWorkData]?
+    let artWorkList: [ArtWorkList]?
     let artWorkInfo: ArtWorkInfo?
     let config: Config?
 }
@@ -26,8 +26,8 @@ struct Config: Codable {
     }
 }
 
-// MARK: - ArtWorkData
-struct ArtWorkData: Codable {
+// MARK: - ArtWorkList
+struct ArtWorkList: Codable {
     let id: Int?
     let apiModel: APIModel?
     let apiLink: String?

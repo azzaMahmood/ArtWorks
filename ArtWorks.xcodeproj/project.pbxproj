@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4759BAFA27452F3C004B6EED /* ArtWorkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAF927452F3C004B6EED /* ArtWorkList.swift */; };
+		4759BAFA27452F3C004B6EED /* ArtWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAF927452F3C004B6EED /* ArtWorkResponse.swift */; };
 		4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAFB274549F9004B6EED /* ArtWorkService.swift */; };
 		4759BAFE274558EB004B6EED /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAFD274558EB004B6EED /* NetworkClient.swift */; };
+		4759BB01274579AE004B6EED /* ArtWorkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BB00274579AE004B6EED /* ArtWorkListViewModel.swift */; };
 		476F8AA6274518BA00E2DC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA5274518BA00E2DC41 /* AppDelegate.swift */; };
 		476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA7274518BA00E2DC41 /* SceneDelegate.swift */; };
 		476F8AAA274518BA00E2DC41 /* ArtWorkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA9274518BA00E2DC41 /* ArtWorkListViewController.swift */; };
@@ -21,9 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4759BAF927452F3C004B6EED /* ArtWorkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkList.swift; sourceTree = "<group>"; };
+		4759BAF927452F3C004B6EED /* ArtWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkResponse.swift; sourceTree = "<group>"; };
 		4759BAFB274549F9004B6EED /* ArtWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkService.swift; sourceTree = "<group>"; };
 		4759BAFD274558EB004B6EED /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		4759BB00274579AE004B6EED /* ArtWorkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkListViewModel.swift; sourceTree = "<group>"; };
 		476F8AA2274518BA00E2DC41 /* ArtWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F8AA5274518BA00E2DC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476F8AA7274518BA00E2DC41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				476F8AA9274518BA00E2DC41 /* ArtWorkListViewController.swift */,
+				4759BB00274579AE004B6EED /* ArtWorkListViewModel.swift */,
 			);
 			path = ArtWorkList;
 			sourceTree = "<group>";
@@ -130,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				476F8ABE2745253E00E2DC41 /* Artist.swift */,
-				4759BAF927452F3C004B6EED /* ArtWorkList.swift */,
+				4759BAF927452F3C004B6EED /* ArtWorkResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,11 +270,12 @@
 			files = (
 				476F8AAA274518BA00E2DC41 /* ArtWorkListViewController.swift in Sources */,
 				476F8AA6274518BA00E2DC41 /* AppDelegate.swift in Sources */,
-				4759BAFA27452F3C004B6EED /* ArtWorkList.swift in Sources */,
+				4759BAFA27452F3C004B6EED /* ArtWorkResponse.swift in Sources */,
 				476F8ABF2745253E00E2DC41 /* Artist.swift in Sources */,
 				4759BAFE274558EB004B6EED /* NetworkClient.swift in Sources */,
 				4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */,
 				476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */,
+				4759BB01274579AE004B6EED /* ArtWorkListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
