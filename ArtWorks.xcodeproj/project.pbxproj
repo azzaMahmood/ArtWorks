@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4759BAFA27452F3C004B6EED /* ArtWorkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAF927452F3C004B6EED /* ArtWorkList.swift */; };
+		4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAFB274549F9004B6EED /* ArtWorkService.swift */; };
+		4759BAFE274558EB004B6EED /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAFD274558EB004B6EED /* NetworkClient.swift */; };
 		476F8AA6274518BA00E2DC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA5274518BA00E2DC41 /* AppDelegate.swift */; };
 		476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA7274518BA00E2DC41 /* SceneDelegate.swift */; };
 		476F8AAA274518BA00E2DC41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA9274518BA00E2DC41 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		4759BAF927452F3C004B6EED /* ArtWorkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkList.swift; sourceTree = "<group>"; };
+		4759BAFB274549F9004B6EED /* ArtWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkService.swift; sourceTree = "<group>"; };
+		4759BAFD274558EB004B6EED /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		476F8AA2274518BA00E2DC41 /* ArtWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F8AA5274518BA00E2DC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476F8AA7274518BA00E2DC41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +56,6 @@
 				ABC4B7360ADE8342404588DA /* Pods-ArtWorks.debug.xcconfig */,
 				8BE51C52D05DEAB19CD72BA1 /* Pods-ArtWorks.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,6 +113,8 @@
 		476F8ABA27451D4D00E2DC41 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4759BAFB274549F9004B6EED /* ArtWorkService.swift */,
+				4759BAFD274558EB004B6EED /* NetworkClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -256,6 +261,8 @@
 				476F8AA6274518BA00E2DC41 /* AppDelegate.swift in Sources */,
 				4759BAFA27452F3C004B6EED /* ArtWorkList.swift in Sources */,
 				476F8ABF2745253E00E2DC41 /* Artist.swift in Sources */,
+				4759BAFE274558EB004B6EED /* NetworkClient.swift in Sources */,
+				4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */,
 				476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
