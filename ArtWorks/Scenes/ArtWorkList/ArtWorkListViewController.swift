@@ -42,7 +42,7 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
             .willDisplayCell
             .subscribe(onNext: { [weak self] cell in
                 guard let self = self else { return }
-             //   self.viewModel?.getArtWorksList.accept(self.hasNextRepos(index: cell.indexPath.row))
+                self.viewModel.isLoadNext.accept(self.hasNextArtWorks(index: cell.indexPath.row))
             }).disposed(by: bag)
     }
     
@@ -55,6 +55,12 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
             }.disposed(by: bag)
     }
 
+    //MARK:- Utilities
+    private func hasNextArtWorks(index: Int) -> Bool {
+        return (self.viewModel.currentItemsCount) <
+            (self.viewModel.totalArtWorks)
+            && index == (self.viewModel.currentItemsCount) - 1
+    }
 
 }
 
