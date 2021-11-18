@@ -11,6 +11,8 @@
 		4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAFB274549F9004B6EED /* ArtWorkService.swift */; };
 		4759BAFE274558EB004B6EED /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BAFD274558EB004B6EED /* NetworkClient.swift */; };
 		4759BB01274579AE004B6EED /* ArtWorkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BB00274579AE004B6EED /* ArtWorkListViewModel.swift */; };
+		4759BB062745DDFA004B6EED /* ArtWorkItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759BB042745DDFA004B6EED /* ArtWorkItemTableViewCell.swift */; };
+		4759BB072745DDFA004B6EED /* ArtWorkItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4759BB052745DDFA004B6EED /* ArtWorkItemTableViewCell.xib */; };
 		476F8AA6274518BA00E2DC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA5274518BA00E2DC41 /* AppDelegate.swift */; };
 		476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA7274518BA00E2DC41 /* SceneDelegate.swift */; };
 		476F8AAA274518BA00E2DC41 /* ArtWorkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8AA9274518BA00E2DC41 /* ArtWorkListViewController.swift */; };
@@ -26,6 +28,8 @@
 		4759BAFB274549F9004B6EED /* ArtWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkService.swift; sourceTree = "<group>"; };
 		4759BAFD274558EB004B6EED /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		4759BB00274579AE004B6EED /* ArtWorkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkListViewModel.swift; sourceTree = "<group>"; };
+		4759BB042745DDFA004B6EED /* ArtWorkItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkItemTableViewCell.swift; sourceTree = "<group>"; };
+		4759BB052745DDFA004B6EED /* ArtWorkItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtWorkItemTableViewCell.xib; sourceTree = "<group>"; };
 		476F8AA2274518BA00E2DC41 /* ArtWorks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtWorks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476F8AA5274518BA00E2DC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476F8AA7274518BA00E2DC41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,10 +76,20 @@
 		4759BAFF27455BE7004B6EED /* ArtWorkList */ = {
 			isa = PBXGroup;
 			children = (
+				4759BB032745D038004B6EED /* Cells */,
 				476F8AA9274518BA00E2DC41 /* ArtWorkListViewController.swift */,
 				4759BB00274579AE004B6EED /* ArtWorkListViewModel.swift */,
 			);
 			path = ArtWorkList;
+			sourceTree = "<group>";
+		};
+		4759BB032745D038004B6EED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4759BB042745DDFA004B6EED /* ArtWorkItemTableViewCell.swift */,
+				4759BB052745DDFA004B6EED /* ArtWorkItemTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		476F8A99274518BA00E2DC41 = {
@@ -214,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				476F8AB2274518BD00E2DC41 /* LaunchScreen.storyboard in Resources */,
+				4759BB072745DDFA004B6EED /* ArtWorkItemTableViewCell.xib in Resources */,
 				476F8AAF274518BD00E2DC41 /* Assets.xcassets in Resources */,
 				476F8AAD274518BA00E2DC41 /* Main.storyboard in Resources */,
 			);
@@ -274,6 +289,7 @@
 				476F8ABF2745253E00E2DC41 /* Artist.swift in Sources */,
 				4759BAFE274558EB004B6EED /* NetworkClient.swift in Sources */,
 				4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */,
+				4759BB062745DDFA004B6EED /* ArtWorkItemTableViewCell.swift in Sources */,
 				476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */,
 				4759BB01274579AE004B6EED /* ArtWorkListViewModel.swift in Sources */,
 			);

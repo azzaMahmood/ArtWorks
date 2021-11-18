@@ -10,9 +10,16 @@ import Foundation
 // MARK: - ArtWorkResponse
 struct ArtWorkResponse: Codable {
     let pagination: Pagination?
-    let artWorkList: [ArtWorkList]?
+    let artWorkList: [ArtWorkItem]?
     let artWorkInfo: ArtWorkInfo?
     let config: Config?
+    
+    enum CodingKeys: String, CodingKey {
+        case pagination
+        case artWorkList = "data"
+        case artWorkInfo = "info"
+        case config
+    }
 }
 
 // MARK: - Config
@@ -26,8 +33,8 @@ struct Config: Codable {
     }
 }
 
-// MARK: - ArtWorkList
-struct ArtWorkList: Codable {
+// MARK: - ArtWorkItem
+struct ArtWorkItem: Codable {
     let id: Int?
     let apiModel: APIModel?
     let apiLink: String?
@@ -40,7 +47,7 @@ struct ArtWorkList: Codable {
     let boostRank: Int?
     let dateStart, dateEnd: Int?
     let dateDisplay: String?
-    let dateQualifierTitle: DateQualifierTitle?
+    let dateQualifierTitle: String?
     let dateQualifierID: Int?
     let artistDisplay: String?
     let placeOfOrigin: String?
@@ -86,7 +93,7 @@ struct ArtWorkList: Codable {
     let altClassificationIDS, classificationIDS, classificationTitles: [String]?
     let subjectID: String?
     let altSubjectIDS, subjectIDS, subjectTitles: [String]?
-    let materialID: MaterialID?
+    let materialID: String?
     let altMaterialIDS, materialIDS, materialTitles: [String]?
     let techniqueID: String?
     let altTechniqueIDS, techniqueIDS, techniqueTitles, themeTitles: [String]?
@@ -100,9 +107,9 @@ struct ArtWorkList: Codable {
     let sectionTitles: [String]?
     let siteIDS: [Int]?
     let suggestAutocompleteAll: [SuggestAutocompleteAll]?
-    let lastUpdatedSource: Date?
-    let lastUpdated: Date?
-    let timestamp: Date?
+    let lastUpdatedSource: String?
+    let lastUpdated: String?
+    let timestamp: String?
     let suggestAutocompleteBoosted: String?
 
     enum CodingKeys: String, CodingKey {
@@ -209,17 +216,6 @@ struct Color: Codable {
     let s: Int?
     let percentage: Double?
     let population: Int?
-}
-
-enum DateQualifierTitle: String, Codable {
-    case c = "c."
-    case empty = ""
-}
-
-enum MaterialID: String, Codable {
-    case tm2448 = "TM-2448"
-    case tm2451 = "TM-2451"
-    case tm2982 = "TM-2982"
 }
 
 enum PublishingVerificationLevel: String, Codable {

@@ -45,9 +45,9 @@ struct ArtistData: Codable {
     let siteIDS: [Int]?
     let artistSuggestAutocompleteBoosted: ArtistSuggestAutocompleteBoosted?
     let artistSuggestAutocompleteAll: ArtistSuggestAutocompleteAll?
-    let lastUpdatedSource: Date?
-    let lastUpdated: Date?
-    let timestamp: Date?
+    let lastUpdatedSource: String?
+    let lastUpdated: String?
+    let timestamp: String?
 
     enum CodingKeys: String, CodingKey {
         case id
