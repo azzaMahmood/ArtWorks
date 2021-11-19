@@ -13,6 +13,7 @@ class ArtWorkListViewModel {
     
     let artWorkList = BehaviorRelay<[ArtWorkItem]>(value: [])
     let isLoadNext = BehaviorRelay<Bool>(value: false)
+    let errorMsg = PublishSubject<String>()
     var imageBaseUrl = ""
 
     private var currentPage = 0
@@ -45,6 +46,8 @@ class ArtWorkListViewModel {
                                             self.artWorkList.accept(self.items)
                                             self.imageBaseUrl = result.config?.iiifURL ?? ""
                                             self.totalArtWorks = result.pagination?.total ?? 0
+                                         }, onError: { [weak self] error in
+                                            self?.errorMsg.onNext(error.localizedDescription)
                                          }).disposed(by: bag)
     }
 }

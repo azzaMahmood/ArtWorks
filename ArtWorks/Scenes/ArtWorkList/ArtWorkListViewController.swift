@@ -70,6 +70,12 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
             {_, artWorkItem, cell in
                 cell.setupUiWithData(artWorkItem: artWorkItem, baseImageUrl: self.viewModel.imageBaseUrl)
             }.disposed(by: bag)
+        
+        viewModel.errorMsg.subscribe(onNext: { [weak self] erro in
+            let alert = UIAlertController(title: "Alert", message: erro, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self?.present(alert, animated: true, completion: nil)
+        }).disposed(by: bag)
     }
     
     private func updatePreviousVisitedView() {
