@@ -20,6 +20,7 @@
 		476F8AAF274518BD00E2DC41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476F8AAE274518BD00E2DC41 /* Assets.xcassets */; };
 		476F8AB2274518BD00E2DC41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476F8AB0274518BD00E2DC41 /* LaunchScreen.storyboard */; };
 		476F8ABF2745253E00E2DC41 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F8ABE2745253E00E2DC41 /* Artist.swift */; };
+		47F5A17727470ABD006CF9DB /* ArtWorkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5A17627470ABD006CF9DB /* ArtWorkDetailsViewController.swift */; };
 		A3F17CD0773545C5FAB9873D /* Pods_ArtWorks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521A2FA6EFC7EF82117A2C60 /* Pods_ArtWorks.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		476F8AB1274518BD00E2DC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476F8AB3274518BD00E2DC41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		476F8ABE2745253E00E2DC41 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		47F5A17627470ABD006CF9DB /* ArtWorkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkDetailsViewController.swift; sourceTree = "<group>"; };
 		521A2FA6EFC7EF82117A2C60 /* Pods_ArtWorks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtWorks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE51C52D05DEAB19CD72BA1 /* Pods-ArtWorks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtWorks.release.xcconfig"; path = "Target Support Files/Pods-ArtWorks/Pods-ArtWorks.release.xcconfig"; sourceTree = "<group>"; };
 		ABC4B7360ADE8342404588DA /* Pods-ArtWorks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtWorks.debug.xcconfig"; path = "Target Support Files/Pods-ArtWorks/Pods-ArtWorks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,9 +165,18 @@
 		476F8ABD27451D8300E2DC41 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				47F5A17527470A6A006CF9DB /* ArtWorkDetails */,
 				4759BAFF27455BE7004B6EED /* ArtWorkList */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		47F5A17527470A6A006CF9DB /* ArtWorkDetails */ = {
+			isa = PBXGroup;
+			children = (
+				47F5A17627470ABD006CF9DB /* ArtWorkDetailsViewController.swift */,
+			);
+			path = ArtWorkDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				4759BAFC274549F9004B6EED /* ArtWorkService.swift in Sources */,
 				4759BB062745DDFA004B6EED /* ArtWorkItemTableViewCell.swift in Sources */,
 				476F8AA8274518BA00E2DC41 /* SceneDelegate.swift in Sources */,
+				47F5A17727470ABD006CF9DB /* ArtWorkDetailsViewController.swift in Sources */,
 				4759BB01274579AE004B6EED /* ArtWorkListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

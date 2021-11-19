@@ -40,7 +40,7 @@ struct ArtWorkItem: Codable {
     let apiLink: String?
     let isBoosted: Bool?
     let title: String?
-    let altTitles: String?
+    let altTitles: [String]?
     let thumbnail: Thumbnail?
     let mainReferenceNumber: String?
     let hasNotBeenViewedMuch: Bool?
@@ -58,7 +58,7 @@ struct ArtWorkItem: Codable {
     let publicationHistory: String?
     let exhibitionHistory: String?
     let provenanceText: String?
-    let publishingVerificationLevel: PublishingVerificationLevel?
+    let publishingVerificationLevel: String?
     let internalDepartmentID: Int?
     let fiscalYear: Int?
     let fiscalYearDeaccession: String?
@@ -216,11 +216,6 @@ struct Color: Codable {
     let s: Int?
     let percentage: Double?
     let population: Int?
-}
-
-enum PublishingVerificationLevel: String, Codable {
-    case webBasic = "Web Basic"
-    case webCataloged = "Web Cataloged"
 }
 
 // MARK: - SuggestAutocompleteAll
