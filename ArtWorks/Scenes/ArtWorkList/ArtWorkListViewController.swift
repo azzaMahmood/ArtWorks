@@ -14,11 +14,15 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
     //MARK:- Properties
     private let bag = DisposeBag()
     var viewModel = ArtWorkListViewModel()
+    var lastVisitedArtModel: ArtWorkItem?
     
     //MARK:- Outlets
     @IBOutlet weak var historyBarItem: UIBarButtonItem!
     @IBOutlet weak var previousVisitedView: UIView!
     @IBOutlet weak var artWorkListTableView: UITableView!
+    @IBOutlet weak var previousVisitedTitleLabel: UILabel!
+    @IBOutlet weak var previousVisitedArtistLabel: UILabel!
+    @IBOutlet weak var previousVisitedImage: UIImageView!
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -47,6 +51,19 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
                 guard let self = self else { return }
                 self.viewModel.isLoadNext.accept(self.hasNextArtWorks(index: cell.indexPath.row))
             }).disposed(by: bag)
+        
+        artWorkListTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] index in
+                self?.lastVisitedArtModel = self?.viewModel.artWorkList.value[index.row]
+                guard let lastVisitedArtModel = self?.lastVisitedArtModel,
+                let viewController = self?.storyboard?.instantiateViewController(identifier: "ArtWorkDetailsViewController") as? ArtWorkDetailsViewController
+                else { return  }
+                let viewModel = ArtWorkDetailsViewModel(lastVisitedArtModel: lastVisitedArtModel)
+                viewController.viewModel = viewModel
+                self?.navigationController?.pushViewController(viewController, animated: true)
+                self?.previousVisitedView.isHidden = false
+            }).disposed(by: bag)
+
     }
     
     private func bindViewModel() {

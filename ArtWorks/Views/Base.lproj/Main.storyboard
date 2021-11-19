@@ -91,6 +91,9 @@
                     <connections>
                         <outlet property="artWorkListTableView" destination="OSS-9y-xgY" id="1l5-At-stG"/>
                         <outlet property="historyBarItem" destination="2s3-b2-efX" id="QxI-55-Uby"/>
+                        <outlet property="previousVisitedArtistLabel" destination="gSz-wV-8FP" id="Vuj-Bl-GZB"/>
+                        <outlet property="previousVisitedImage" destination="HZf-wf-ZmY" id="hm4-DQ-vTE"/>
+                        <outlet property="previousVisitedTitleLabel" destination="ePp-tw-eHB" id="hY8-RE-YOn"/>
                         <outlet property="previousVisitedView" destination="hC7-AD-4Qg" id="l0u-FR-fXK"/>
                     </connections>
                 </viewController>

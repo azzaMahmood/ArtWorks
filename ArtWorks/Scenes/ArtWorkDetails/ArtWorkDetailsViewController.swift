@@ -12,7 +12,7 @@ import RxRelay
 class ArtWorkDetailsViewController: UIViewController {
     
     //MARK:- Properties
-    var viewModel = ArtWorkDetailsViewModel()
+    var viewModel: ArtWorkDetailsViewModel?
     var ddd = PublishSubject<ArtistData>()
     private let bag = DisposeBag()
 
@@ -32,11 +32,13 @@ class ArtWorkDetailsViewController: UIViewController {
         super.viewDidLoad()
         artistDatesView.isHidden = true
         bindViweModel()
+        titleLable.text = viewModel?.lastVisitedArtModel.title
+        artistLable.text = viewModel?.lastVisitedArtModel.artistTitle
     }
     
     //MARK:- Bindings
     func bindViweModel() {
-        viewModel.artistInfo.subscribe(onNext: { [weak self] info in
+        viewModel?.artistInfo.subscribe(onNext: { [weak self] info in
             self?.birthDateLable.text = info.birthDate?.description
             self?.deathDateLabel.text = info.deathDate?.description
         }).disposed(by: bag)
