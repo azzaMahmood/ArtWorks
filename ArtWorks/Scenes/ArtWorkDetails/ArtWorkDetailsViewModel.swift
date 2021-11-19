@@ -27,4 +27,12 @@ class ArtWorkDetailsViewModel {
             self.artistInfo.onNext(artistData)
         }).disposed(by: bag)
     }
+    
+    func getBase64String() -> String {
+        guard let wholeBase64String = lastVisitedArtModel.thumbnail?.lqip else { return  ""}
+        let index = wholeBase64String.index(after: wholeBase64String.firstIndex(of: ",") ?? wholeBase64String.startIndex)
+        let base64SubString = wholeBase64String.substring(from: index)
+        return String(base64SubString)
+    }
+    
 }

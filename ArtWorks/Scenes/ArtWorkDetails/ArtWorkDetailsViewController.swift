@@ -13,7 +13,6 @@ class ArtWorkDetailsViewController: UIViewController {
     
     //MARK:- Properties
     var viewModel: ArtWorkDetailsViewModel?
-    var ddd = PublishSubject<ArtistData>()
     private let bag = DisposeBag()
 
     
@@ -42,8 +41,17 @@ class ArtWorkDetailsViewController: UIViewController {
         viewModel?.artistInfo.subscribe(onNext: { [weak self] info in
             self?.birthDateLable.text = info.birthDate?.description
             self?.deathDateLabel.text = info.deathDate?.description
+            self?.thumbnailImage.image = self?.convertBase64StringToImage(imageBase64String: self?.viewModel?.getBase64String() ?? "")
+
         }).disposed(by: bag)
     }
+    
+    //Mark:- Utilities
+    func convertBase64StringToImage (imageBase64String:String) -> UIImage {
+            let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
+            let image = UIImage(data: imageData!)
+            return image!
+        }
     
     
     //MARK: - Actions
