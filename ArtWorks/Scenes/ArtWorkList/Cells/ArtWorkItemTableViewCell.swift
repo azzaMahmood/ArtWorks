@@ -25,6 +25,7 @@ class ArtWorkItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     func setupUiWithData(artWorkItem: ArtWorkItem, baseImageUrl: String) {
