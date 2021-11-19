@@ -17,12 +17,14 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK:- Outlets
     @IBOutlet weak var historyBarItem: UIBarButtonItem!
+    @IBOutlet weak var previousVisitedView: UIView!
     @IBOutlet weak var artWorkListTableView: UITableView!
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Art Works"
+        previousVisitedView.isHidden = true
         setupTableView()
         configureBinding()
         bindViewModel()
