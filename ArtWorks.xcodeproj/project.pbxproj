@@ -77,6 +77,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		472747962748004500F781A7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		4759BAFF27455BE7004B6EED /* ArtWorkList */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +124,7 @@
 		476F8AA4274518BA00E2DC41 /* ArtWorks */ = {
 			isa = PBXGroup;
 			children = (
+				472747962748004500F781A7 /* New Group */,
 				476F8AB927451D1B00E2DC41 /* AppDelegate */,
 				476F8ABA27451D4D00E2DC41 /* Networking */,
 				476F8ABD27451D8300E2DC41 /* Scenes */,

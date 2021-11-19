@@ -56,12 +56,7 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
         artWorkListTableView.rx.itemSelected
             .subscribe(onNext: { [weak self] index in
                 self?.lastVisitedArtModel = self?.viewModel.artWorkList.value[index.row]
-                guard let lastVisitedArtModel = self?.lastVisitedArtModel,
-                let viewController = self?.storyboard?.instantiateViewController(identifier: "ArtWorkDetailsViewController") as? ArtWorkDetailsViewController
-                else { return  }
-                let viewModel = ArtWorkDetailsViewModel(lastVisitedArtModel: lastVisitedArtModel)
-                viewController.viewModel = viewModel
-                self?.navigationController?.pushViewController(viewController, animated: true)
+                self?.navigateToDetailsScreen()
                 self?.updatePreviousVisitedView()
                 self?.previousVisitedView.isHidden = false
             }).disposed(by: bag)
@@ -94,6 +89,20 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
             (self.viewModel.totalArtWorks)
             && index == (self.viewModel.currentItemsCount) - 1
     }
+    
+    private func navigateToDetailsScreen() {
+        guard let lastVisitedArtModel = lastVisitedArtModel,
+        let viewController = self.storyboard?.instantiateViewController(identifier: "ArtWorkDetailsViewController") as? ArtWorkDetailsViewController
+        else { return  }
+        let viewModel = ArtWorkDetailsViewModel(lastVisitedArtModel: lastVisitedArtModel)
+        viewController.viewModel = viewModel
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func previousVisitedArtWorkPressed(_ sender: Any) {
+        navigateToDetailsScreen()
+    }
+    
 
 }
 
