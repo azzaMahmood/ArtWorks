@@ -21,10 +21,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ETt-pj-sVW">
-                                <rect key="frame" x="0.0" y="760" width="404" height="111"/>
+                                <rect key="frame" x="0.0" y="760" width="414" height="136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-AD-4Qg">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="111"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-fx-2Rp">
                                                 <rect key="frame" x="20" y="20" width="384" height="91"/>
@@ -62,13 +62,13 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dT-p1-cXa">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="111"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
                                                 <connections>
                                                     <action selector="previousVisitedArtWorkPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nID-ko-AfZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.19137467651235399" green="0.45278481522557956" blue="0.87457585642018265" alpha="0.162061003600659" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="4dT-p1-cXa" firstAttribute="width" secondItem="hC7-AD-4Qg" secondAttribute="width" id="4aV-fb-0O7"/>
                                             <constraint firstItem="4dT-p1-cXa" firstAttribute="height" secondItem="hC7-AD-4Qg" secondAttribute="height" id="QcV-oz-oHb"/>
@@ -76,8 +76,8 @@
                                             <constraint firstItem="jEU-fx-2Rp" firstAttribute="leading" secondItem="hC7-AD-4Qg" secondAttribute="leading" constant="20" symbolic="YES" id="X50-GN-mru"/>
                                             <constraint firstItem="4dT-p1-cXa" firstAttribute="leading" secondItem="hC7-AD-4Qg" secondAttribute="leading" id="bTp-9o-3sl"/>
                                             <constraint firstItem="4dT-p1-cXa" firstAttribute="top" secondItem="hC7-AD-4Qg" secondAttribute="top" id="dnv-xa-eJs"/>
-                                            <constraint firstAttribute="trailing" secondItem="jEU-fx-2Rp" secondAttribute="trailing" id="k1l-WY-ua6"/>
-                                            <constraint firstAttribute="bottom" secondItem="jEU-fx-2Rp" secondAttribute="bottom" id="t8V-4X-mAe"/>
+                                            <constraint firstAttribute="trailing" secondItem="jEU-fx-2Rp" secondAttribute="trailing" constant="10" id="k1l-WY-ua6"/>
+                                            <constraint firstAttribute="bottom" secondItem="jEU-fx-2Rp" secondAttribute="bottom" constant="25" id="t8V-4X-mAe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -86,8 +86,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ETt-pj-sVW" secondAttribute="bottom" constant="25" id="Gzf-VN-rwX"/>
-                            <constraint firstAttribute="trailing" secondItem="ETt-pj-sVW" secondAttribute="trailing" constant="10" id="Xol-Cb-G5W"/>
+                            <constraint firstAttribute="bottom" secondItem="ETt-pj-sVW" secondAttribute="bottom" id="Gzf-VN-rwX"/>
+                            <constraint firstAttribute="trailing" secondItem="ETt-pj-sVW" secondAttribute="trailing" id="Xol-Cb-G5W"/>
                             <constraint firstItem="ETt-pj-sVW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b7P-ab-ccJ"/>
                             <constraint firstItem="OSS-9y-xgY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fDm-ri-aVy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OSS-9y-xgY" secondAttribute="trailing" id="k59-Xc-zIE"/>
@@ -96,7 +96,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b7J-te-k4O">
-                        <barButtonItem key="rightBarButtonItem" title="History" id="2s3-b2-efX"/>
+                        <barButtonItem key="rightBarButtonItem" title="History" id="2s3-b2-efX">
+                            <connections>
+                                <action selector="historyButtonPressed:" destination="BYZ-38-t0r" id="9PL-AV-OGL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="artWorkListTableView" destination="OSS-9y-xgY" id="1l5-At-stG"/>
@@ -237,6 +241,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5j-g3-7Qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1923" y="86"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="Ewx-Ct-mA4">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="Eu8-Gl-91L" customClass="HistoryViewController" customModule="ArtWorks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Q6-IC-m6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVV-dL-2pK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iqM-pV-Tjy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iqM-pV-Tjy" firstAttribute="trailing" secondItem="QVV-dL-2pK" secondAttribute="trailing" id="Whr-aL-Fb7"/>
+                            <constraint firstItem="QVV-dL-2pK" firstAttribute="leading" secondItem="4Q6-IC-m6Y" secondAttribute="leading" id="Z4g-tF-yR4"/>
+                            <constraint firstItem="iqM-pV-Tjy" firstAttribute="bottom" secondItem="QVV-dL-2pK" secondAttribute="bottom" id="f75-ly-xwf"/>
+                            <constraint firstItem="QVV-dL-2pK" firstAttribute="top" secondItem="iqM-pV-Tjy" secondAttribute="top" id="lfs-or-Vs1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="historyTableView" destination="QVV-dL-2pK" id="JgW-AL-zI3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI4-Pe-df4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2747.826086956522" y="81.696428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nc8-cy-XAn">

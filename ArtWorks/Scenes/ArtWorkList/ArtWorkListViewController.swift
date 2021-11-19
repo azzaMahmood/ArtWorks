@@ -16,6 +16,7 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
     private let bag = DisposeBag()
     var viewModel = ArtWorkListViewModel()
     var lastVisitedArtModel: ArtWorkItem?
+    var historyArtWorks: [ArtWorkItem] = []
     
     //MARK:- Outlets
     @IBOutlet weak var historyBarItem: UIBarButtonItem!
@@ -55,10 +56,13 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
         
         artWorkListTableView.rx.itemSelected
             .subscribe(onNext: { [weak self] index in
-                self?.lastVisitedArtModel = self?.viewModel.artWorkList.value[index.row]
-                self?.navigateToDetailsScreen()
-                self?.updatePreviousVisitedView()
-                self?.previousVisitedView.isHidden = false
+                guard let self = self else { return }
+                self.lastVisitedArtModel = self.viewModel.artWorkList.value[index.row]
+                self.navigateToDetailsScreen()
+                self.updatePreviousVisitedView()
+                self.previousVisitedView.isHidden = false
+                guard  let lastVisitedArtModel = self.lastVisitedArtModel else { return }
+                self.historyArtWorks.append(lastVisitedArtModel)
             }).disposed(by: bag)
 
     }
@@ -100,15 +104,24 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
         guard let lastVisitedArtModel = lastVisitedArtModel,
         let viewController = self.storyboard?.instantiateViewController(identifier: "ArtWorkDetailsViewController") as? ArtWorkDetailsViewController
         else { return  }
-        let viewModel = ArtWorkDetailsViewModel(lastVisitedArtModel: lastVisitedArtModel)
+        let viewModel = ArtWorkDetailsViewModel(currentArtWorkModel: lastVisitedArtModel)
         viewController.viewModel = viewModel
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    //MARK: - Actions
     @IBAction func previousVisitedArtWorkPressed(_ sender: Any) {
         navigateToDetailsScreen()
     }
     
-
+    @IBAction func historyButtonPressed(_ sender: UIBarButtonItem) {
+        guard let viewController = self.storyboard?.instantiateViewController(identifier: "HistoryViewController") as? HistoryViewController
+        else { return  }
+        let viewModel = HistoryViewModel()
+        viewController.viewModel = viewModel
+        viewModel.artWorkList.accept(historyArtWorks)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 

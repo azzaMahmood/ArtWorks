@@ -32,8 +32,8 @@ class ArtWorkDetailsViewController: UIViewController {
         artistDatesView.isHidden = true
         bindViweModel()
         title = "Art Work Details"
-        titleLable.text = viewModel?.lastVisitedArtModel.title
-        artistLable.text = viewModel?.lastVisitedArtModel.artistTitle
+        titleLable.text = viewModel?.currentArtWorkModel.title
+        artistLable.text = viewModel?.currentArtWorkModel.artistTitle
     }
     
     //MARK:- Bindings
@@ -47,7 +47,7 @@ class ArtWorkDetailsViewController: UIViewController {
     }
     
     //Mark:- Utilities
-    func convertBase64StringToImage (imageBase64String:String) -> UIImage {
+    func convertBase64StringToImage (imageBase64String: String) -> UIImage {
             let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
             let image = UIImage(data: imageData!)
             return image!
