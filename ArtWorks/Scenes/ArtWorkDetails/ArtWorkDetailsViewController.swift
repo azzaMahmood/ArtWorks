@@ -32,6 +32,7 @@ class ArtWorkDetailsViewController: UIViewController {
         super.viewDidLoad()
         artistDatesView.isHidden = true
         bindViweModel()
+        title = "Art Work Details"
         titleLable.text = viewModel?.lastVisitedArtModel.title
         artistLable.text = viewModel?.lastVisitedArtModel.artistTitle
     }

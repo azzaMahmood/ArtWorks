@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
     
@@ -61,6 +62,7 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
                 let viewModel = ArtWorkDetailsViewModel(lastVisitedArtModel: lastVisitedArtModel)
                 viewController.viewModel = viewModel
                 self?.navigationController?.pushViewController(viewController, animated: true)
+                self?.updatePreviousVisitedView()
                 self?.previousVisitedView.isHidden = false
             }).disposed(by: bag)
 
@@ -74,6 +76,17 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
                 cell.setupUiWithData(artWorkItem: artWorkItem, baseImageUrl: self.viewModel.imageBaseUrl)
             }.disposed(by: bag)
     }
+    
+    private func updatePreviousVisitedView() {
+        previousVisitedTitleLabel.text = lastVisitedArtModel?.title
+        previousVisitedArtistLabel.text = lastVisitedArtModel?.artistTitle
+        let defaultCompletionUrl = "/full/843,/0/default.jpg"
+        if let imageId = lastVisitedArtModel?.imageID,
+           let url = URL(string: viewModel.imageBaseUrl + "/" + imageId + defaultCompletionUrl) {
+            previousVisitedImage.kf.setImage(with: url)
+        }
+    }
+    
 
     //MARK:- Utilities
     private func hasNextArtWorks(index: Int) -> Bool {
