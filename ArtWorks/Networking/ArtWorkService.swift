@@ -21,8 +21,8 @@ enum ArtWorkService: TargetType {
         switch  self {
         case .artworks:
             return "artworks"
-        case .artist(let requestId):
-            return "artists/\(requestId)"
+        case .artist(let artestId):
+            return "artists/\(artestId)"
         }
     }
     

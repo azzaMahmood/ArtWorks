@@ -12,6 +12,12 @@ struct Artist: Codable {
     let artistData: ArtistData?
     let info: artistInfo?
     let config: ArtistConfig?
+    
+    enum CodingKeys: String, CodingKey {
+        case artistData = "data"
+        case info
+        case config
+    }
 }
 
 // MARK: - ArtistConfig

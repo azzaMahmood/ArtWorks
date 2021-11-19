@@ -38,14 +38,13 @@ class ArtWorkListViewModel {
     
     func getArtWorksList() {
         NetworkClient.shared.sendRequest(endPoint: .artworks(page: currentPage),
-                                          decodingType: ArtWorkResponse.self).subscribe(onNext: { [weak self] (result) in
+                                         decodingType: ArtWorkResponse.self).subscribe(onNext: { [weak self] (result) in
                                             guard let self = self else { return }
-                                            print("eeee\(result)")
                                             self.items.append(contentsOf: result.artWorkList ?? [])
                                             self.currentItemsCount = self.items.count
                                             self.artWorkList.accept(self.items)
                                             self.imageBaseUrl = result.config?.iiifURL ?? ""
                                             self.totalArtWorks = result.pagination?.total ?? 0
-                                          }).disposed(by: bag)
+                                         }).disposed(by: bag)
     }
 }

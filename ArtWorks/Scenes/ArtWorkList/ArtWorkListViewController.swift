@@ -35,6 +35,7 @@ class ArtWorkListViewController: UIViewController, UIScrollViewDelegate {
         artWorkListTableView.rowHeight = UITableView.automaticDimension
     }
     
+    //MARK:- Bindings
     private func configureBinding() {
         artWorkListTableView.rx
             .setDelegate(self)
