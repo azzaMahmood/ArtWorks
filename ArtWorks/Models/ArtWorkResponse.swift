@@ -103,7 +103,7 @@ struct ArtWorkItem: Codable {
     let soundIDS: [String]?
     let videoIDS: [String]?
     let textIDS: [String]?
-    let sectionIDS: [String]?
+    let sectionIDS: [Int]?
     let sectionTitles: [String]?
     let siteIDS: [Int]?
     let suggestAutocompleteAll: [SuggestAutocompleteAll]?
